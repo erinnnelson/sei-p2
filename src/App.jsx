@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 // import { Link, Route, } from 'react-router-dom'
-import { searchSong, getSong, } from './services/api-helper'
+import { searchSongByTitle, getSongById, } from './services/api-helper'
 
 
 class App extends React.Component {
@@ -13,7 +13,7 @@ class App extends React.Component {
   }
 
   componentDidMount = async () => {
-    await searchSong('You Need Calm Down')
+    await getSongById('EqnWLK')
   }
 
   render() {

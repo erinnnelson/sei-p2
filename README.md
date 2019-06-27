@@ -1,4 +1,4 @@
-# Project Overview
+# Project Overview <img src="assets/panda.gif" alt="panda gif" width="100"/>
 
 This is the NYC General Assembly Software Engineerning Immersive, Panda Cohort's "Project 2," created by Erinn Nelson.
 
