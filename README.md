@@ -1,68 +1,93 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Project Overview
 
-## Available Scripts
+This is Student Coding Project 2, created by Erinn Nelson, for the NYC General Assembly Software Engineering Immersive Panda Cohort.
 
-In the project directory, you can run:
+## Project Description
 
-### `npm start`
+The purpose of the app is to build music playlists for running. Users may search for and receive information about songs through use of the [GetSongBPM API](https://getsongbpm.com/api). The user may add songs from their serarches to a playlist and sort them by tempo.
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Created using React.
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+**Site Link:** _(coming soon)_
 
-### `npm test`
+## Wireframes
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+**Desktop View**
 
-### `npm run build`
+<img src="wireframes/wf_dt1.png" alt="wireframe" width="500"/>
+<img src="wireframes/wf_dt2.png" alt="mobile wireframe" width="500"/>
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+**Mobile View**
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+<img src="wireframes/wf_mb1.png" alt="wireframe" width="200"/> <img src="wireframes/wf_mb2.png" alt="mobile wireframe" width="200"/> <img src="wireframes/wf_mb3.png" alt="mobile wireframe" width="200"/>
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### MVP/PostMVP - 5min
 
-### `npm run eject`
+**MVP**
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+*App can successfully call API for song info based on title
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+*Results from search can be rendered on page as song cards
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+*User may choose song cards to add to a playlist
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+*User may remove songs from playlist
 
-## Learn More
+**PostMVP**
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+*Playlists can be sorted manually or by BPM
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+*Song cards in playlists can be expanded for more info
 
-### Code Splitting
+*Playlists can be saved and stored to local storage 
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+*List informtion about running and pace
 
-### Analyzing the Bundle Size
+## React Component Hierarchy
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+Define the the React components and the architectural design of your app.
 
-### Making a Progressive Web App
+## Functional Components
+##### Writing out your components and its descriptions isn't a required part of the proposal but can be helpful.
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+Based on the initial logic defined in the previous sections try and breakdown the logic further into stateless/stateful components. 
 
-### Advanced Configuration
+| Component | Description | 
+| --- | :---: |  
+| Header | This will render the header include the nav | 
+| Footer | This will render the header include the nav | 
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
+<!-- Time frames are also key in the development cycle.  You have limited time to code all phases of the game.  Your estimates can then be used to evalute game possibilities based on time needed and the actual time you have before game must be submitted. It's always best to pad the time by a few hours so that you account for the unknown so add and additional hour or two to each component to play it safe. Also, put a gif at the top of your Readme before you pitch, and you'll get a panda prize.
 
-### Deployment
+| Component | Priority | Estimated Time | Time Invetsted | Actual Time |
+| --- | :---: |  :---: | :---: | :---: |
+| Adding Form | H | 3hrs| 3.5hrs | 3.5hrs |
+| Working with API | H | 3hrs| 2.5hrs | 2.5hrs |
+| Total | H | 6hrs| 5hrs | 5hrs | -->
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
+## Helper Functions
+Helper functions should be generic enought that they can be reused in other applications. Use this section to document all helper functions that fall into this category.
 
-### `npm run build` fails to minify
+| Function | Description | 
+| --- | :---: |  
+| Capitalize | This will capitalize the first letter in a string of text | 
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+<!-- ## Additional Libraries
+ Use this section to list all supporting libraries and thier role in the project. 
+
+## Code Snippet
+
+Use this section to include a brief code snippet of functionality that you are proud of an a brief description  
+
+```
+function reverse(string) {
+	// here is the code to reverse a string of text
+}
+```
+
+## Issues and Resolutions
+ Use this section to list of all major issues encountered and their resolution.
+
+#### SAMPLE.....
+**ERROR**: app.js:34 Uncaught SyntaxError: Unexpected identifier                                
+**RESOLUTION**: Missing comma after first object in sources {} object -->
