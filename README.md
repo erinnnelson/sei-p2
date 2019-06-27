@@ -12,12 +12,12 @@ Created using React.
 
 ## Wireframes
 
-**Desktop View**
+**Desktop View:**
 
-<img src="wireframes/wf_dt1.png" alt="wireframe" width="500"/>
-<img src="wireframes/wf_dt2.png" alt="mobile wireframe" width="500"/>
+<img src="wireframes/wf_dt1.png" alt="wireframe" width="606"/>
+<img src="wireframes/wf_dt2.png" alt="mobile wireframe" width="606"/>
 
-**Mobile View**
+**Mobile View:**
 
 <img src="wireframes/wf_mb1.png" alt="wireframe" width="200"/> <img src="wireframes/wf_mb2.png" alt="mobile wireframe" width="200"/> <img src="wireframes/wf_mb3.png" alt="mobile wireframe" width="200"/>
 
@@ -25,23 +25,23 @@ Created using React.
 
 **MVP**
 
-*App can successfully call API for song info based on title
+* App can successfully call API for song info based on title
 
-*Results from search can be rendered on page as song cards
+* Results from search can be rendered on page as song cards
 
-*User may choose song cards to add to a playlist
+* User may choose song cards to add to a playlist
 
-*User may remove songs from playlist
+* User may remove songs from playlist
 
 **PostMVP**
 
-*Playlists can be sorted manually or by BPM
+* Playlists can be sorted manually or by BPM
 
-*Song cards in playlists can be expanded for more info
+* Song cards in playlists can be expanded for more info
 
-*Playlists can be saved and stored to local storage 
+* Playlists can be saved and stored to local storage 
 
-*List informtion about running and pace
+* List informtion about running and pace
 
 ## React Component Hierarchy
 
