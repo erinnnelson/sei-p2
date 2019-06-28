@@ -6,7 +6,9 @@ export default (props) => {
     <>
       {props.searchResults.map(song =>
         
-        <div key={song.id} className="song-card" onClick={() => props.handleAddSong(song.id)}>
+        <div key={song.id} className="song-card"
+          // onClick={() => props.handleAddSong(song.id)}
+        >
         <SongCard 
           song={song}
           isSearchResult={true}
