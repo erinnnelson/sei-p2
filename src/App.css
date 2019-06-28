@@ -43,6 +43,7 @@ nav a:active {
 }
 
 .building-blocks {
+  width:250px;
   margin: 20px;
   padding: 10px;
   border: 2px solid black;

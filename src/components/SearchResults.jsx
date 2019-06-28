@@ -1,12 +1,17 @@
 import React from 'react'
 import SongCard from './SongCard'
 
-export default () => {
+export default (props) => {
   return (
-    <div>
-      <SongCard />
-      <SongCard />
-      <SongCard />
-    </div>
+    <>
+      {props.searchResults.map(song =>
+        
+        <div key={song.id} className="song-card" onClick={() => props.handleAddSong(song.id)}>
+        <SongCard 
+          song={song}
+          isSearchResult={true}
+        />
+      </div>)}
+    </>
   );
 }

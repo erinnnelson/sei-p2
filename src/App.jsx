@@ -6,6 +6,7 @@ import Header from './components/Header';
 import PlaylistBuilder from './components/PlaylistBuilder';
 import SavedPlaylists from './components/SavedPlaylists';
 import Footer from './components/Footer';
+import { yieldExpression } from '@babel/types';
 
 
 class App extends React.Component {
@@ -15,7 +16,8 @@ class App extends React.Component {
       searchResults: [],
       newPlaylist: [],
       search: '',
-      isSearchLoading: false
+      isSearchLoading: false,
+      
     }
   }
 
@@ -35,7 +37,6 @@ class App extends React.Component {
     if (!this.state.search) {
       return;
     }
-
     let query = this.state.search;
     this.setState({
       search: '',
@@ -45,8 +46,15 @@ class App extends React.Component {
     this.setState({
       searchResults: searchResults.data.search,
       isSearchLoading: false
-    })
-    console.log(this.state.searchResults)
+    });
+  }
+
+  handleAddSong = async (id) => {
+    let newSong = await getSongById(id);
+    this.setState(prevState => ({
+      newPlaylist: [...prevState.newPlaylist, newSong],
+    }));
+    // console.log(this.state.newPlaylist);
   }
 
   render() {
@@ -63,8 +71,10 @@ class App extends React.Component {
               search={this.state.search}
               isSearchLoading={this.state.isSearchLoading}
               searchResults={this.state.searchResults}
+              newPlaylist={this.state.newPlaylist}
               handleSearchChange={this.handleSearchChange}
               handleSearchSubmit={this.handleSearchSubmit}
+              handleAddSong={this.handleAddSong}
             />} />
           <Route path='/saved' render={() => <SavedPlaylists />} />
         </main>

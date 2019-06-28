@@ -1,9 +1,11 @@
 import React from 'react'
 
-export default () => {
+export default (props) => {
   return (
-    <div>
-      Song
-    </div>
+    <>
+      <p>{props.song.title}</p>
+      <p>by {props.song.name}</p>
+      <p>{props.song.tempo}</p>
+    </>
   );
 }

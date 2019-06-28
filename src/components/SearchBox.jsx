@@ -9,8 +9,12 @@ export default (props) => {
       <SearchInput
         search={props.search}
         handleSearchChange={props.handleSearchChange}
-        handleSearchSubmit={props.handleSearchSubmit} />
-      <SearchResults />
+        handleSearchSubmit={props.handleSearchSubmit}
+      />
+      <SearchResults
+        searchResults={props.searchResults}
+        handleAddSong={props.handleAddSong}
+      />
       
     </div>
   );
