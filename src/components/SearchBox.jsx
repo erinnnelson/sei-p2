@@ -3,10 +3,13 @@ import SearchInput from './SearchInput'
 import SearchResults from './SearchResults'
 
 
-export default () => {
+export default (props) => {
   return (
     <div id="search-box" className="building-blocks">
-      <SearchInput />
+      <SearchInput
+        search={props.search}
+        handleSearchChange={props.handleSearchChange}
+        handleSearchSubmit={props.handleSearchSubmit} />
       <SearchResults />
       
     </div>

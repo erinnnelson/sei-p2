@@ -1,7 +1,16 @@
 import React from 'react'
 
-export default () => {
+export default (props) => {
   return (
-      <input autoFocus type="text" placeholder="Song Name..."/>
+    <form onSubmit={props.handleSearchSubmit}>
+      <input
+        autoFocus
+        name="search"
+        type="text"
+        placeholder="Song Name..."
+        value={props.search}
+        onChange={props.handleSearchChange}
+      />
+    </form>
   );
 }
