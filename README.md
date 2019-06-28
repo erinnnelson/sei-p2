@@ -59,6 +59,7 @@ Created with [React](https://reactjs.org/).
       * **\<PlaylistBuilder />**
         * **\<SearchBox />**
           * **\<SearchInput />**
+            * <input type='text'>
           * **\<SearchResults />**
             * **\<SongCard />**
               * \<img src='album photo'>
