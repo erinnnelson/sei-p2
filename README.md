@@ -55,36 +55,36 @@ Created with [React](https://reactjs.org/).
         * \<nav>
           * \<Link to='/'>
           * \<Link to='/playlists>
-        * \<main>
-          * **\<PlaylistBuilder />**
-            * **\<SearchBox />**
-              * **\<SearchInput />**
-              * **\<SearchResults />**
-                * **\<SongCard />**
-                  * \<img src='album photo'>
-                  * 'title, artist, tempo, length'
-                  * \<button onClick='add/remove/edit'>
-            * **\<PlaylistEditor />**
-              * **\<PlaylistCard/>**
-                * 'playlist title, length'
-                * \<button onClick='clear/remove'>
-                * **\<SongCard />**
-                  * \<img src='album photo'>
-                  * 'song title, artist, tempo, length'
-                  * \<button onClick='add/remove/edit'>
-              * \<button onClick='sort'>
-              * \<button onClick='save'>
-          * **\<SavedPlaylists />**
-            * **\<PlaylistCard />**
-                * 'playlist title, length'
-                * \<button onClick='clear/remove'>
-                * **\<SongCard />**
-                  * \<img src='album photo'>
-                  * 'song title, artist, tempo, length'
-                  * \<button onClick='add/remove/edit'>
-        * \<footer>
-          * \<a href='api credit'>
-          * \<a href='github'>
+    * \<main>
+      * **\<PlaylistBuilder />**
+        * **\<SearchBox />**
+          * **\<SearchInput />**
+          * **\<SearchResults />**
+            * **\<SongCard />**
+              * \<img src='album photo'>
+              * 'title, artist, tempo, length'
+              * \<button onClick='add/remove/edit'>
+        * **\<PlaylistEditor />**
+          * **\<PlaylistCard/>**
+            * 'playlist title, length'
+            * \<button onClick='clear/remove'>
+            * **\<SongCard />**
+              * \<img src='album photo'>
+              * 'song title, artist, tempo, length'
+              * \<button onClick='add/remove/edit'>
+          * \<button onClick='sort'>
+          * \<button onClick='save'>
+      * **\<SavedPlaylists />**
+        * **\<PlaylistCard />**
+          * 'playlist title, length'
+          * \<button onClick='clear/remove'>
+          * **\<SongCard />**
+            * \<img src='album photo'>
+            * 'song title, artist, tempo, length'
+            * \<button onClick='add/remove/edit'>
+    * \<footer>
+      * \<a href='api credit'>
+      * \<a href='github'>
 
 ## Functional Components
  

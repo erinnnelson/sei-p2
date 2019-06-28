@@ -7,15 +7,54 @@ body {
   text-align: center;
 }
 
+
+/* HEADER */
 header {
   background-color:lightblue;
 }
 
-h1 {
+#site-title {
   font-size: 3em;
   margin: 0;
   font-family: 'Rock Salt', cursive;
   background: -webkit-linear-gradient(#eee, #333);
   background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+
+nav a {
+  margin: 0 50px;
+  text-decoration: none;
+  color: black;
+}
+
+nav a:hover {
+  color: #787de3;
+}
+
+nav a:active {
+  opacity: .5
+}
+
+/* PLAYLIST BUILDER */
+#playlist-builder {
+  display: flex;
+  justify-content: center;
+}
+
+.building-blocks {
+  margin: 20px;
+  padding: 10px;
+  border: 2px solid black;
+}
+
+footer a {
+  font-weight: bold;
+  color: maroon;
+  text-decoration: none;
+}
+
+footer a:hover {
+  color: lightpink;
+
 }
