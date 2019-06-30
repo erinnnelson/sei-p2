@@ -6,12 +6,11 @@ export default (props) => {
     <>
       {props.searchResults.map(song =>
         
-        <div key={song.id} className="song-card"
-          // onClick={() => props.handleAddSong(song.id)}
-        >
+        <div className="song-block" key={song.id}>
         <SongCard 
           song={song}
           isSearchResult={true}
+          handleAddSong={props.handleAddSong}
         />
       </div>)}
     </>

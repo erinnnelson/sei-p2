@@ -6,7 +6,6 @@ import Header from './components/Header';
 import PlaylistBuilder from './components/PlaylistBuilder';
 import SavedPlaylists from './components/SavedPlaylists';
 import Footer from './components/Footer';
-import { yieldExpression } from '@babel/types';
 
 
 class App extends React.Component {
@@ -14,10 +13,13 @@ class App extends React.Component {
     super(props)
     this.state = {
       searchResults: [],
-      newPlaylist: [],
       search: '',
       isSearchLoading: false,
-      
+      newPlaylist: {
+        songs: [],
+        title: 'New Playlist'
+      }
+
     }
   }
 
@@ -52,13 +54,15 @@ class App extends React.Component {
   handleAddSong = async (id) => {
     let newSong = await getSongById(id);
     this.setState(prevState => ({
-      newPlaylist: [...prevState.newPlaylist, newSong],
+      newPlaylist: {
+        songs: [...prevState.newPlaylist.songs, newSong]
+      }
     }));
-    // console.log(this.state.newPlaylist);
+    // console.log(this.state.newPlaylist.songs);
   }
 
   render() {
-    let isNewPlaylistEmpty = !this.state.newPlaylist.length;
+    let isNewPlaylistEmpty = !this.state.newPlaylist.songs.length;
 
     return (
       <>
@@ -71,7 +75,7 @@ class App extends React.Component {
               search={this.state.search}
               isSearchLoading={this.state.isSearchLoading}
               searchResults={this.state.searchResults}
-              newPlaylist={this.state.newPlaylist}
+              newPlaylist={this.state.newPlaylist.songs}
               handleSearchChange={this.handleSearchChange}
               handleSearchSubmit={this.handleSearchSubmit}
               handleAddSong={this.handleAddSong}

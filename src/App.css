@@ -43,10 +43,56 @@ nav a:active {
 }
 
 .building-blocks {
-  width:250px;
+  width: 250px;
   margin: 20px;
   padding: 10px;
   border: 2px solid black;
+}
+
+.song-block {
+  display: grid;
+  grid-template-columns: 1fr 30px;
+}
+
+.song-info {
+  border: 1px solid black;
+  margin: 10px 5px;
+}
+
+.add-button, .remove-button {
+  border: 1px solid black;
+  width: 30px;
+  height: 30px;
+  border-radius: 100%;
+  margin: auto;
+  outline: none;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+/* .add-button:hover, .remove-button:hover {
+  box-shadow: 0 0 10px grey;
+} */
+.add-button:hover {
+  background-color: black;
+  color: white;
+}
+
+.remove-button:hover {
+  border-color: red;
+  background-color: red;
+  color: white;
+}
+
+.add-button:active, .remove-button:active {
+  opacity: .5;
+}
+
+.album-art {
+  max-width: 50px;
+  max-height: 50px;
+  border: 1px solid grey;
+  border-radius: 10px;
 }
 
 footer a {
