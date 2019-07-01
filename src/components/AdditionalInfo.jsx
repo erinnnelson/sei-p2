@@ -7,7 +7,7 @@ export default (props) => {
     <div className="additional-info">
       <img className="album-art" src={props.song.img || art_default} />
       <div className="deciders">
-        <p>Tempo: {props.song.tempo || 'Unknown'}</p>
+        <p>{props.song.tempo || 'Unknown'} BPM</p>
         <AddRemoveButton
           handleAddSong={props.handleAddSong}
           add={props.isSearchResult}

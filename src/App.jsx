@@ -52,12 +52,18 @@ class App extends React.Component {
   }
 
   handleAddSong = (newSong) => {
-    this.setState(prevState => ({
+    let bpmSort = [...this.state.newPlaylist.songs, newSong].sort((a, b) => {
+      let temp1 = { ...a };
+      let temp2 = { ...b };
+      temp1.tempo = a.tempo < 101 ? a.tempo * 2 : a.tempo
+      temp2.tempo = b.tempo < 101 ? b.tempo * 2 : b.tempo
+      return temp1.tempo - temp2.tempo;
+    })
+    this.setState({
       newPlaylist: {
-        songs: [...prevState.newPlaylist.songs, newSong]
+        songs: bpmSort
       }
-    }));
-    // console.log(this.state.newPlaylist.songs);
+    });
   }
 
   render() {
