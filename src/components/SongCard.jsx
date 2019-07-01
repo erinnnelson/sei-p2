@@ -1,7 +1,6 @@
 import React from 'react'
 import SongSummary from './SongSummary'
 import AdditionalInfo from './AdditionalInfo'
-import AddRemoveButton from './AddRemoveButton'
 import { getSongById } from '../services/api-helper'
 import art_default from '../assets/art_default.jpg'
 
@@ -23,7 +22,7 @@ export default class SongCard extends React.Component {
       this.setState({
         fullInfo: fullInfo
       })
-      console.log(this.state.fullInfo)
+      // console.log(this.state.fullInfo)
     }
     this.setState(prevState => ({
       showFullInfo: !prevState.showFullInfo
@@ -35,14 +34,8 @@ export default class SongCard extends React.Component {
       <>
         <div className="song-info" onClick={this.state.isSearchResult && this.handleClick}>
           <SongSummary song={this.props.song} showFullInfo={this.state.showFullInfo} />
-          {this.state.showFullInfo && <AdditionalInfo song={this.state.fullInfo} />}
-           
+          {this.state.showFullInfo && <AdditionalInfo song={this.state.fullInfo} handleAddSong={this.props.handleAddSong} isSearchResult={this.props.isSearchResult} />}
         </div>
-        <AddRemoveButton
-          handleAddSong={this.props.handleAddSong}
-          add={this.props.isSearchResult}
-          song={this.props.song}
-        />
       </>
     );
   }

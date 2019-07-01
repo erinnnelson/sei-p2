@@ -51,8 +51,7 @@ class App extends React.Component {
     });
   }
 
-  handleAddSong = async (id) => {
-    let newSong = await getSongById(id);
+  handleAddSong = (newSong) => {
     this.setState(prevState => ({
       newPlaylist: {
         songs: [...prevState.newPlaylist.songs, newSong]
@@ -75,7 +74,7 @@ class App extends React.Component {
               search={this.state.search}
               isSearchLoading={this.state.isSearchLoading}
               searchResults={this.state.searchResults}
-              newPlaylist={this.state.newPlaylist.songs}
+              newPlaylist={this.state.newPlaylist}
               handleSearchChange={this.handleSearchChange}
               handleSearchSubmit={this.handleSearchSubmit}
               handleAddSong={this.handleAddSong}

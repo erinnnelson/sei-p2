@@ -1,15 +1,18 @@
 import React from 'react'
-import SongCard from './SongCard'
+import PlaylistSongCard from './PlaylistSongCard'
 
 export default (props) => {
   // console.log(props.songs)
   return (
     <>
-      {props.songs.map(song =>
+      <input
+        type="text"
+        placeholder="New Playlist"
+      />
+      {props.newPlaylist.songs.map(song =>
         <div key={song.id} className="song-card">
-          <SongCard
+          <PlaylistSongCard
             song={song}
-            isSearchResult={false}
           />
         </div>
       )}
