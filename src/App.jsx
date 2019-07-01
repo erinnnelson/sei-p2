@@ -66,6 +66,17 @@ class App extends React.Component {
     });
   }
 
+  handleDeleteSong = (songId) => {
+    console.log(this.state.newPlaylist.songs)
+    let filteredSong = [...this.state.newPlaylist.songs].filter((song) => (songId !== song.id))
+    this.setState(prevState => ({
+      newPlaylist: {
+        songs: filteredSong
+      }
+    }));
+    console.log(this.state.newPlaylist.songs)
+  }
+
   render() {
     let isNewPlaylistEmpty = !this.state.newPlaylist.songs.length;
 
@@ -84,6 +95,7 @@ class App extends React.Component {
               handleSearchChange={this.handleSearchChange}
               handleSearchSubmit={this.handleSearchSubmit}
               handleAddSong={this.handleAddSong}
+              handleDeleteSong={this.handleDeleteSong}
             />} />
           <Route path='/saved' render={() => <SavedPlaylists />} />
         </main>

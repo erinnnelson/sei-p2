@@ -7,6 +7,7 @@ export default (props) => {
       <PlaylistCard
         newPlaylist={props.newPlaylist}
         canEdit={true}
+        handleDeleteSong={props.handleDeleteSong}
       />
     </div>
   );

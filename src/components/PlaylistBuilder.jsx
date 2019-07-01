@@ -12,7 +12,10 @@ export default (props) => {
         handleSearchSubmit={props.handleSearchSubmit}
         handleAddSong={props.handleAddSong}
       />
-      <PlaylistEditor newPlaylist={props.newPlaylist}/>
+      <PlaylistEditor
+        newPlaylist={props.newPlaylist}
+        handleDeleteSong={props.handleDeleteSong}
+      />
     </div>
   );
 }
