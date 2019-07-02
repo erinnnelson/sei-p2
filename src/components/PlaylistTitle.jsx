@@ -2,22 +2,25 @@ import React from 'react'
 import onClickOutside from "react-onclickoutside"
 
 
-function PlaylistTitle (props) {
+function PlaylistTitle(props) {
   return (
 
     <div id="playlist-title-changer">
       {props.newPlaylist.editTitle ?
-        <form onSubmit={props.handleRetitleSubmit} onClickOutside={props.handleClickOutside}>
+        <form autocomplete="off" onSubmit={props.handleRetitleSubmit} onClickOutside={props.handleClickOutside}>
           <input
+            autocomplete="off"
             autoFocus
             id="change-playlist-title"
             type="text"
             value={props.newPlaylist.title}
-            placeholder="New Playlist"
             onChange={props.handleRetitleChange}
           />
         </form>
-        : <p id="playlist-title" onClick={props.handleRetitleClick}>{props.newPlaylist.title}</p>}
+        : props.newPlaylist.title === "New Playlist" ?
+          <p id="greyed-playlist-title" onClick={props.handleRetitleClick}>{props.newPlaylist.title}</p>
+          : <p id="playlist-title" onClick={props.handleRetitleClick}>{props.newPlaylist.title}</p>
+      }
     </div>
   );
 }

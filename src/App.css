@@ -19,7 +19,7 @@ header {
   font-size: 3em;
   margin: 0;
   font-family: 'Rock Salt', cursive;
-  background: -webkit-linear-gradient(rgb(185, 216, 229), rgb(78, 12, 12));
+  background: linear-gradient(rgb(185, 216, 229), rgb(78, 12, 12));
   background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -116,14 +116,14 @@ main {
 
 .song-info:hover {
   border-color: grey;
-  box-shadow: 0 2px 20px grey;
+  box-shadow: 0 0 20px rgba(128, 128, 128, 0.678);
   cursor: pointer;
 }
 
 .playlist-song-info:hover {
-  background-color: rgba(255, 215, 215, 0.909);
+  background-color: rgba(255, 240, 240, 0.909);
   border-color: rgb(236, 39, 39);
-  box-shadow: 0 2px 20px rgb(255, 0, 0);
+  box-shadow: 0 0 20px rgba(255, 0, 0, 0.656);
   cursor: pointer;
 }
 
@@ -187,21 +187,45 @@ main {
   border-radius: 10px;
 }
 
+#playlist-header {
+  display: grid;
+  grid-template-columns: 15fr 1fr;
+}
+
+#clear-playlist {
+  color: grey;
+  font-weight: bold;
+  font-size: 20px;
+  height: auto;
+  background: none;
+  outline: none;
+  margin: 3px -10px auto 10px;
+  border-radius: 10px;
+}
+
+#clear-playlist:hover {
+  color: red;
+  box-shadow: 0 0 5px rgba(255, 0, 0, 0.56);
+ }
+
+#clear-playlist:active {
+ opacity: .5;
+}
+
 #playlist-title-changer, #search-box {
   text-align: left;
 }
 
-#change-playlist-title, #playlist-title {
+#change-playlist-title, #playlist-title, #greyed-playlist-title {
   width: 85%;
 }
 
-#change-playlist-title, #search-field, #playlist-title {
+#change-playlist-title, #search-field, #playlist-title, #greyed-playlist-title {
   font-size: 30px;
   padding: 0 3px;
 }
 
 #change-playlist-title, #search-field {
-  color: grey;
   text-align: left;
   background: none;
   border-color: 1px grey;
@@ -210,15 +234,28 @@ main {
 }
 
 #change-playlist-title {
+  color: rgb(149, 149, 149);
   margin: 5px 0 12px 0;;
 }
 
 #playlist-title {
   color: rgb(73, 73, 73);
-  margin: 5px 0 26px 0;
+  margin: 5px 0 16px 0;
+}
+
+#greyed-playlist-title:hover {
+  cursor: text;
+}
+
+#greyed-playlist-title {
+  margin: 5px 0 16px 0;
+  background: linear-gradient(to right, rgba(128, 128, 128, 0.781), rgba(128, 128, 128, 0.149));
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 #search-field {
+  color: grey;
   width: 96%;
   margin: 5px 0;
 }

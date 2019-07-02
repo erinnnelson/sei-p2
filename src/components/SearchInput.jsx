@@ -2,8 +2,9 @@ import React from 'react'
 
 export default (props) => {
   return (
-    <form onSubmit={props.handleSearchSubmit}>
+    <form autocomplete="off" onSubmit={props.handleSearchSubmit}>
       <input
+        autocomplete="off"
         id="search-field" 
         autoFocus
         name="search"

@@ -20,6 +20,7 @@ export default (props) => {
         handleRetitleSubmit={props.handleRetitleSubmit}
         handleRetitleClick={props.handleRetitleClick}
         handleClickOutside={props.handleClickOutside}
+        handleClearPlaylist={props.handleClearPlaylist}
       />
     </div>
   );
