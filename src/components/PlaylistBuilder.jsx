@@ -16,6 +16,9 @@ export default (props) => {
       <PlaylistEditor
         newPlaylist={props.newPlaylist}
         handleDeleteSong={props.handleDeleteSong}
+        handleRetitleChange={props.handleRetitleChange}
+        handleRetitleSubmit={props.handleRetitleSubmit}
+        handleRetitleClick={props.handleRetitleClick}
       />
     </div>
   );

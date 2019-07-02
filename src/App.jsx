@@ -18,15 +18,11 @@ class App extends React.Component {
       isSearchLoading: false,
       newPlaylist: {
         songs: [],
-        title: 'New Playlist'
+        title: 'New Playlist',
+        editTitle: false
       }
 
     }
-  }
-
-  componentDidMount() {
-    // await getSongById('EqnWLK')
-    // await searchSongByTitle('hook');
   }
 
   handleSearchChange = (ev) => {
@@ -60,17 +56,17 @@ class App extends React.Component {
       })
     } else
       if (searchResults.data.search.error) {
-      this.setState({
-        isSearchLoading: false,
-        searchCheck: 'No Results'
-      })
-    } else {
-      this.setState({
-        isSearchLoading: false,
-        searchCheck: '',
-        searchResults: searchResults.data.search
-      });
-    }
+        this.setState({
+          isSearchLoading: false,
+          searchCheck: 'No Results'
+        })
+      } else {
+        this.setState({
+          isSearchLoading: false,
+          searchCheck: '',
+          searchResults: searchResults.data.search
+        });
+      }
   }
 
   handleAddSong = (newSong) => {
@@ -81,22 +77,68 @@ class App extends React.Component {
       temp2.tempo = b.tempo < 101 ? b.tempo * 2 : b.tempo
       return temp1.tempo - temp2.tempo;
     })
-    this.setState({
+    this.setState(prevState => ({
       newPlaylist: {
-        songs: bpmSort
+        songs: bpmSort,
+        title: prevState.newPlaylist.title,
+        editTitle: prevState.newPlaylist.editTitle
       }
-    });
+    }));
   }
 
   handleDeleteSong = (songId) => {
-    console.log(this.state.newPlaylist.songs)
     let filteredSong = [...this.state.newPlaylist.songs].filter((song) => (songId !== song.id))
     this.setState(prevState => ({
       newPlaylist: {
-        songs: filteredSong
+        songs: filteredSong,
+        title: prevState.newPlaylist.title,
+        editTitle: prevState.newPlaylist.editTitle
+
       }
     }));
-    console.log(this.state.newPlaylist.songs)
+  }
+
+  handleRetitleClick = () => {
+    this.setState(prevState => ({
+      newPlaylist: {
+        songs: prevState.newPlaylist.songs,
+        title: prevState.newPlaylist.title,
+        editTitle: true
+
+      }
+    }));
+  }
+
+  handleRetitleChange = (ev) => {
+    let titleChange = ev.target.value;
+    this.setState(prevState => ({
+      newPlaylist: {
+        songs: prevState.newPlaylist.songs,
+        title: titleChange,
+        editTitle: prevState.newPlaylist.editTitle
+      }
+    }));
+  }
+
+  handleRetitleSubmit = () => {
+    if (!this.state.newPlaylist.title || this.state.newPlaylist.title.split(' ')[0] === '') {
+      this.setState(prevState => ({
+        newPlaylist: {
+          songs: prevState.newPlaylist.songs,
+          title: 'New Playlist',
+          editTitle: false
+        }
+      }));
+    } else {
+      this.setState(prevState => ({
+        newPlaylist: {
+          songs: prevState.newPlaylist.songs,
+          title: prevState.newPlaylist.title,
+          editTitle: false
+
+        }
+      }));
+    }
   }
 
   render() {
@@ -114,11 +156,14 @@ class App extends React.Component {
               isSearchLoading={this.state.isSearchLoading}
               searchResults={this.state.searchResults}
               newPlaylist={this.state.newPlaylist}
+              searchCheck={this.state.searchCheck}
+              handleRetitleChange={this.handleRetitleChange}
+              handleRetitleSubmit={this.handleRetitleSubmit}
+              handleRetitleClick={this.handleRetitleClick}
               handleSearchChange={this.handleSearchChange}
               handleSearchSubmit={this.handleSearchSubmit}
               handleAddSong={this.handleAddSong}
               handleDeleteSong={this.handleDeleteSong}
-              searchCheck={this.state.searchCheck}
             />} />
           <Route path='/saved' render={() => <SavedPlaylists />} />
         </main>
