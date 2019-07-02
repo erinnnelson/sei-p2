@@ -1,9 +1,9 @@
 import React from 'react'
+import construction from '../assets/construction.png'
 
 export default () => {
   return (
-    <div>
-      Saved Playlists View
+    <div id="coming-soon">
     </div>
   );
 }

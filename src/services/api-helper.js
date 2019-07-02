@@ -5,9 +5,13 @@ const token = "808cb7ccc74833a1c783c51a0e10d84a";
 const base = "https://api.getsongbpm.com";
 
 export const searchSongByTitle = async (search) => {
-  let query = search.split(' ').join('+');
-  const response = await axios.get(`${proxy}${base}/search/?api_key=${token}&type=song&lookup=${query}`);
-  return response
+  try {
+    let query = search.split(' ').join('+');
+    const response = await axios.get(`${proxy}${base}/search/?api_key=${token}&type=song&lookup=${query}`);
+    return response
+  } catch (e) {
+    return e.response.data
+  }
 }
 
 export const getSongById = async (id) => {

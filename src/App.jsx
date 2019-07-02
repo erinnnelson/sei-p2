@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import { Link, Route, } from 'react-router-dom';
+import { Route, } from 'react-router-dom';
 import { searchSongByTitle, getSongById, } from './services/api-helper';
 import Header from './components/Header';
 import PlaylistBuilder from './components/PlaylistBuilder';
@@ -36,11 +36,12 @@ class App extends React.Component {
   }
 
   handleSearchSubmit = async (ev) => {
-    ev.preventDefault(); 
-    if (!this.state.search || this.state.search === ' ') {
+    ev.preventDefault();
+    if (!this.state.search || this.state.search.split(' ')[0] === '') {
       this.setState({
         searchCheck: 'Please enter a song title',
-        searchResults: []
+        searchResults: [],
+        search: ''
       })
       return;
     }
@@ -52,7 +53,13 @@ class App extends React.Component {
       searchResults: []
     });
     let searchResults = await searchSongByTitle(query);
-    if (searchResults.data.search.error) {
+    if (searchResults.error) {
+      this.setState({
+        isSearchLoading: false,
+        searchCheck: 'api is down'
+      })
+    } else
+      if (searchResults.data.search.error) {
       this.setState({
         isSearchLoading: false,
         searchCheck: 'No Results'

@@ -5,9 +5,9 @@ import AddRemoveButton from './AddRemoveButton'
 export default (props) => {
   return (
     <div className="additional-info">
-      <img className="album-art" src={props.song.img || art_default} />
+      <img className="album-art" src={props.song.img || art_default} alt="album art" />
       <div className="deciders">
-        <p>{props.song.tempo || 'Unknown'} BPM</p>
+        <p>{props.song.tempo || '---'} BPM</p>
         <AddRemoveButton
           handleAddSong={props.handleAddSong}
           add={props.isSearchResult}
