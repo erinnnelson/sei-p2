@@ -14,6 +14,7 @@ export default (props) => {
       <SearchResults
         searchResults={props.searchResults}
         handleAddSong={props.handleAddSong}
+        searchCheck={props.searchCheck}
       />
       
     </div>

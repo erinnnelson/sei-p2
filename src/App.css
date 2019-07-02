@@ -70,6 +70,24 @@ main {
   display: none;
 }
 
+.searchCheck {
+  color: grey;
+}
+
+#loading {
+  /* -webkit-animation: flickerAnimation 1s infinite;
+  -moz-animation: flickerAnimation 1s infinite;
+  -o-animation: flickerAnimation 1s infinite; */
+   animation: loadingAnimation 1s infinite;
+}
+
+@keyframes loadingAnimation {
+  0%   { opacity:1; }
+  50%  { opacity:0; }
+  100% { opacity:1; }
+}
+
+
 .song-info, .playlist-song-info {
   border: 1px solid black;
   margin: 10px auto;

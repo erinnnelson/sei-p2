@@ -11,6 +11,7 @@ export default (props) => {
         handleSearchChange={props.handleSearchChange}
         handleSearchSubmit={props.handleSearchSubmit}
         handleAddSong={props.handleAddSong}
+        searchCheck={props.searchCheck}
       />
       <PlaylistEditor
         newPlaylist={props.newPlaylist}

@@ -12,6 +12,7 @@ class App extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
+      searchCheck: '',
       searchResults: [],
       search: '',
       isSearchLoading: false,
@@ -35,20 +36,34 @@ class App extends React.Component {
   }
 
   handleSearchSubmit = async (ev) => {
-    ev.preventDefault();
-    if (!this.state.search) {
+    ev.preventDefault(); 
+    if (!this.state.search || this.state.search === ' ') {
+      this.setState({
+        searchCheck: 'Please enter a song title',
+        searchResults: []
+      })
       return;
     }
     let query = this.state.search;
     this.setState({
       search: '',
-      isSearchLoading: true
+      searchCheck: 'searching',
+      isSearchLoading: true,
+      searchResults: []
     });
     let searchResults = await searchSongByTitle(query);
-    this.setState({
-      searchResults: searchResults.data.search,
-      isSearchLoading: false
-    });
+    if (searchResults.data.search.error) {
+      this.setState({
+        isSearchLoading: false,
+        searchCheck: 'No Results'
+      })
+    } else {
+      this.setState({
+        isSearchLoading: false,
+        searchCheck: '',
+        searchResults: searchResults.data.search
+      });
+    }
   }
 
   handleAddSong = (newSong) => {
@@ -96,6 +111,7 @@ class App extends React.Component {
               handleSearchSubmit={this.handleSearchSubmit}
               handleAddSong={this.handleAddSong}
               handleDeleteSong={this.handleDeleteSong}
+              searchCheck={this.state.searchCheck}
             />} />
           <Route path='/saved' render={() => <SavedPlaylists />} />
         </main>
