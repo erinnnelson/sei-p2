@@ -11,6 +11,7 @@ export default (props) => {
         handleRetitleChange={props.handleRetitleChange}
         handleRetitleSubmit={props.handleRetitleSubmit}
         handleRetitleClick={props.handleRetitleClick}
+        handleClickOutside={props.handleClickOutside}
       />
       {props.newPlaylist.songs.map(song =>
         <div

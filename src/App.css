@@ -77,7 +77,8 @@ main {
   display: none;
 }
 
-.searchCheck {
+.search-check {
+  text-align: center;
   color: grey;
 }
 
@@ -186,28 +187,39 @@ main {
   border-radius: 10px;
 }
 
-#playlist-title-changer {
+#playlist-title-changer, #search-box {
   text-align: left;
 }
 
-#change-playlist-title {
-  color: grey;
-  font-size: 30px;
+#change-playlist-title, #playlist-title {
   width: 85%;
+}
+
+#change-playlist-title, #search-field, #playlist-title {
+  font-size: 30px;
+  padding: 0 3px;
+}
+
+#change-playlist-title, #search-field {
+  color: grey;
   text-align: left;
   background: none;
   border-color: 1px grey;
   border-radius: 10px;
   outline: none;
-  padding: 0 3px;
-  margin: 5px 0;
+}
+
+#change-playlist-title {
+  margin: 5px 0 12px 0;;
 }
 
 #playlist-title {
   color: rgb(73, 73, 73);
-  font-size: 30px;
-  width: 85%;
-  padding: 0 3px;
+  margin: 5px 0 26px 0;
+}
+
+#search-field {
+  width: 96%;
   margin: 5px 0;
 }
 

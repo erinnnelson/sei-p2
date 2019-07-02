@@ -4,7 +4,7 @@ import error from '../assets/error.png'
 
 export default (props) => {
   return (
-    <div className="searchCheck">
+    <div className="search-check">
       <p id="loading">{props.searchCheck === "searching" && props.searchCheck}</p>
       <p id="empty-search-results">{props.searchCheck === "No Results" && props.searchCheck}</p>
       <p id="empty-search-field">{props.searchCheck === "Please enter a song title" && props.searchCheck}</p>

@@ -120,6 +120,10 @@ class App extends React.Component {
     }));
   }
 
+  handleClickOutside = () => {
+    this.handleRetitleSubmit();
+  }
+
   handleRetitleSubmit = () => {
     if (!this.state.newPlaylist.title || this.state.newPlaylist.title.split(' ')[0] === '') {
       this.setState(prevState => ({
@@ -160,6 +164,7 @@ class App extends React.Component {
               handleRetitleChange={this.handleRetitleChange}
               handleRetitleSubmit={this.handleRetitleSubmit}
               handleRetitleClick={this.handleRetitleClick}
+              handleClickOutside={this.handleClickOutside}
               handleSearchChange={this.handleSearchChange}
               handleSearchSubmit={this.handleSearchSubmit}
               handleAddSong={this.handleAddSong}

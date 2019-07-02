@@ -1,11 +1,13 @@
 import React from 'react'
+import onClickOutside from "react-onclickoutside"
 
-export default (props) => {
+
+function PlaylistTitle (props) {
   return (
 
     <div id="playlist-title-changer">
       {props.newPlaylist.editTitle ?
-        <form onSubmit={props.handleRetitleSubmit}>
+        <form onSubmit={props.handleRetitleSubmit} onClickOutside={props.handleClickOutside}>
           <input
             autoFocus
             id="change-playlist-title"
@@ -19,3 +21,6 @@ export default (props) => {
     </div>
   );
 }
+
+// npm found: https://www.npmjs.com/package/react-onclickoutside
+export default onClickOutside(PlaylistTitle);
