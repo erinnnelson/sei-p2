@@ -131,3 +131,7 @@ handleRetitleSubmit = () => {
 Currently the background image won't stay fixed on a mobile platform.
 
 Proposed solution: wrap the entire body in a div and set it to scroll in a media query.
+
+Had to deal with CORS and used a proxy.
+
+Sorting posed some problems, not quite sure why.
