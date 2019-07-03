@@ -9,12 +9,6 @@ body {
   background-size: cover;
 }
 
-
-/* HEADER */
-header {
-  /* background-color:lightblue; */
-}
-
 #site-title {
   font-size: 3em;
   margin: 0;
@@ -64,8 +58,6 @@ main {
   border: 2px solid black;
   border-radius: 15px;
   overflow: auto;
-  
-  
 }
 
 /* borrowed from: https://forum.webflow.com/t/how-do-i-hide-the-browser-scrollbar-from-appearing-when-a-user-scrolls/59643 */
@@ -206,7 +198,7 @@ main {
 #clear-playlist:hover {
   color: red;
   box-shadow: 0 0 5px rgba(255, 0, 0, 0.56);
- }
+}
 
 #clear-playlist:active {
  opacity: .5;
@@ -227,10 +219,11 @@ main {
 
 #change-playlist-title, #search-field {
   text-align: left;
-  background: none;
+  background: rgba(255, 255, 255, 0.765);
   border-color: 1px grey;
   border-radius: 10px;
   outline: none;
+  color: grey;
 }
 
 #change-playlist-title {
@@ -255,7 +248,6 @@ main {
 }
 
 #search-field {
-  color: grey;
   width: 96%;
   margin: 5px 0;
 }
@@ -275,4 +267,33 @@ footer a {
 footer a:hover {
   color: lightpink;
 
+}
+
+@media only screen and (max-width: 675px) {
+  body {
+    text-align: center;
+    background: url(./assets/background.jpg) no-repeat center center fixed;
+    background-size: cover;
+  }
+  
+  #site-title {
+    font-size: 2em;
+  }
+  
+  nav a {
+  margin: 0 25px;
+  }
+
+  #playlist-builder {
+    flex-direction: column;
+
+  }
+
+  .building-blocks {
+    margin: 20px auto;
+  }
+
+  main {
+    height: 150vh;
+  }
 }

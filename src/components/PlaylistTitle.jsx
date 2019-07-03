@@ -17,9 +17,11 @@ function PlaylistTitle(props) {
             onChange={props.handleRetitleChange}
           />
         </form>
-        : props.newPlaylist.title === "New Playlist" ?
-          <p id="greyed-playlist-title" onClick={props.handleRetitleClick}>{props.newPlaylist.title}</p>
-          : <p id="playlist-title" onClick={props.handleRetitleClick}>{props.newPlaylist.title}</p>
+        : <p id={props.newPlaylist.title === "New Playlist"
+          ?
+          "greyed-playlist-title"
+          :
+          "playlist-title"} onClick={props.handleRetitleClick}>{props.newPlaylist.title}</p>
       }
     </div>
   );
