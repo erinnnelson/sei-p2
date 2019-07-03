@@ -25,7 +25,6 @@ class App extends React.Component {
         // Used to fix a form that reloaded on mobile but not on desktop
         outsideClick: false,
       }
-
     }
   }
 
@@ -201,7 +200,6 @@ class App extends React.Component {
           <Footer />
         </footer>
       </>
-
     );
   }
 }

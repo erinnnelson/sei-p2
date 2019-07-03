@@ -235,7 +235,7 @@ nav a:active {
   margin: 5px 0 16px 0;
 }
 
-#greyed-playlist-title:hover {
+#playlist-title:hover {
   cursor: text;
 }
 
@@ -244,6 +244,10 @@ nav a:active {
   background: linear-gradient(to right, rgba(128, 128, 128, 0.781), rgba(128, 128, 128, 0.149));
   background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+
+#greyed-playlist-title:hover {
+  cursor: text;
 }
 
 #search-field {
