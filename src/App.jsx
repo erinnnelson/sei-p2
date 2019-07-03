@@ -84,9 +84,8 @@ class App extends React.Component {
     })
     this.setState(prevState => ({
       newPlaylist: {
+        ...prevState.newPlaylist,
         songs: bpmSort,
-        title: prevState.newPlaylist.title,
-        editTitle: prevState.newPlaylist.editTitle
       }
     }));
   }
@@ -95,9 +94,8 @@ class App extends React.Component {
     let filteredSong = [...this.state.newPlaylist.songs].filter((song) => (songId !== song.id))
     this.setState(prevState => ({
       newPlaylist: {
+        ...prevState.newPlaylist,
         songs: filteredSong,
-        title: prevState.newPlaylist.title,
-        editTitle: prevState.newPlaylist.editTitle
       }
     }));
   }
@@ -105,9 +103,9 @@ class App extends React.Component {
   handleClearPlaylist = () => {
     this.setState(prevState => ({
       newPlaylist: {
+        ...prevState.newPlaylist,
         songs: [],
         title: 'New Playlist',
-        editTitle: prevState.newPlaylist.editTitle
       }
     }));
   }
@@ -116,8 +114,7 @@ class App extends React.Component {
   handleRetitleClick = () => {
     this.setState(prevState => ({
       newPlaylist: {
-        songs: prevState.newPlaylist.songs,
-        title: prevState.newPlaylist.title,
+        ...prevState.newPlaylist,
         editTitle: true
       }
     }));
@@ -127,9 +124,8 @@ class App extends React.Component {
     let titleChange = ev.target.value;
     this.setState(prevState => ({
       newPlaylist: {
-        songs: prevState.newPlaylist.songs,
+        ...prevState.newPlaylist,
         title: titleChange,
-        editTitle: prevState.newPlaylist.editTitle
       }
     }));
   }
