@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 import { Route, } from 'react-router-dom';
-import { searchSongByTitle, getSongById, } from './services/api-helper';
+import { searchSongByTitle, } from './services/api-helper';
 import Header from './components/Header';
 import PlaylistBuilder from './components/PlaylistBuilder';
 import SavedPlaylists from './components/SavedPlaylists';
@@ -73,7 +73,6 @@ class App extends React.Component {
         });
       }
   }
-
 
   // Adding and deleting songs to playlist
   handleAddSong = (newSong) => {
