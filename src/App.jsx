@@ -12,6 +12,7 @@ class App extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
+      outsideClick: false,
       searchCheck: '',
       searchResults: [],
       search: '',
@@ -120,10 +121,19 @@ class App extends React.Component {
   }
 
   handleClickOutside = () => {
+    this.setState({
+      outsideClick: true
+    })
     this.handleRetitleSubmit();
   }
 
-  handleRetitleSubmit = () => {
+  handleRetitleSubmit = (ev) => {
+    if (!this.state.outsideClick) {
+      ev.preventDefault();
+    }
+    this.setState({
+      outsideClick: false
+    })
     if (!this.state.newPlaylist.title || this.state.newPlaylist.title.split(' ')[0] === '') {
       this.setState(prevState => ({
         newPlaylist: {

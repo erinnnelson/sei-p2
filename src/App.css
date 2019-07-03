@@ -33,7 +33,7 @@ nav a:active {
 }
 
 main {
-  height: 82vh;
+  /* height: 82vh; */
 }
 
 #coming-soon {
@@ -41,6 +41,7 @@ main {
   height: 100%;
   background: url(./assets/construction.png) no-repeat center -20px;
   background-size: 500px;
+  height: 81.6vh;
 }
 
 /* PLAYLIST BUILDER */
@@ -272,8 +273,9 @@ footer a:hover {
 @media only screen and (max-width: 675px) {
   body {
     text-align: center;
-    background: url(./assets/background.jpg) no-repeat center center fixed;
     background-size: cover;
+    background-attachment: fixed;
+    background-position: center right -275px;
   }
   
   #site-title {
@@ -294,6 +296,12 @@ footer a:hover {
   }
 
   main {
-    height: 150vh;
+    /* height: 150vh; */
+  }
+
+  #coming-soon {
+    background: url(./assets/construction.png) no-repeat center 30px;
+    background-size: 300px;
+    height: 85vh;
   }
 }

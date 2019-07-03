@@ -6,9 +6,9 @@ This is the NYC General Assembly Software Engineerning Immersive, Panda Cohort's
 
 The purpose of this app is to build a music playlist for running and exercise. Users may search for and receive information about songs through use of the [GetSongBPM](https://getsongbpm.com/api) API. Once displayed in search results, songs may be added to a playlist and sorted by tempo.
 
-Created with [React](https://reactjs.org/).
+**Site Link:** [Beat My Run](http://beatmyrun.surge.sh/)
 
-**Site Link:** _(coming soon)_
+Created with [React](https://reactjs.org/).
 
 ## Wireframes
 

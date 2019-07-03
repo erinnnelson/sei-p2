@@ -1,6 +1,7 @@
 import axios from 'axios'
 
-const proxy = "https://thingproxy.freeboard.io/fetch/";
+// const proxy = "https://thingproxy.freeboard.io/fetch/";
+const proxy = "https://cors-anywhere.herokuapp.com/";
 const token = "808cb7ccc74833a1c783c51a0e10d84a";
 const base = "https://api.getsongbpm.com";
 
