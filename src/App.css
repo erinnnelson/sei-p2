@@ -9,6 +9,8 @@ body {
   background-size: cover;
 }
 
+/* Header */
+
 #site-title {
   font-size: 3em;
   margin: 0;
@@ -32,9 +34,9 @@ nav a:active {
   opacity: .5
 }
 
-main {
-  /* height: 82vh; */
-}
+/* Main */
+
+/* Under construction image */
 
 #coming-soon {
   width: 100%;
@@ -44,7 +46,8 @@ main {
   height: 81.6vh;
 }
 
-/* PLAYLIST BUILDER */
+/* Song search */
+
 #playlist-builder {
   display: flex;
   justify-content: center;
@@ -76,9 +79,6 @@ main {
 }
 
 #loading {
-  /* -webkit-animation: flickerAnimation 1s infinite;
-  -moz-animation: flickerAnimation 1s infinite;
-  -o-animation: flickerAnimation 1s infinite; */
    animation: loading 1s infinite;
 }
 
@@ -92,7 +92,6 @@ main {
   width: 30%;
   opacity: .7;
 }
-
 
 .song-info, .playlist-song-info {
   border: 1px solid black;
@@ -161,9 +160,6 @@ main {
   font-weight: bold;
 }
 
-/* .add-button:hover, .remove-button:hover {
-  box-shadow: 0 0 10px grey;
-} */
 .add-button:hover {
   background-color: black;
   color: white;
@@ -179,6 +175,8 @@ main {
   border: 1px solid grey;
   border-radius: 10px;
 }
+
+/* Playlist holder */
 
 #playlist-header {
   display: grid;
@@ -253,6 +251,8 @@ main {
   margin: 5px 0;
 }
 
+/* Footer */
+
 footer {
   height: 50px;
   background-color: rgb(239, 239, 239, .7);
@@ -269,6 +269,8 @@ footer a:hover {
   color: lightpink;
 
 }
+
+/* Media queries */
 
 @media only screen and (max-width: 675px) {
   body {

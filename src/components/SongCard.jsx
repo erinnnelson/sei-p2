@@ -2,7 +2,6 @@ import React from 'react'
 import SongSummary from './SongSummary'
 import AdditionalInfo from './AdditionalInfo'
 import { getSongById } from '../services/api-helper'
-import art_default from '../assets/art_default.jpg'
 
 export default class SongCard extends React.Component {
   constructor(props) {
@@ -12,7 +11,6 @@ export default class SongCard extends React.Component {
       showFullInfo: !this.props.isSearchResult,
       fullInfoCalled: false,
       fullInfo: null
-    
     }
   }
 
@@ -22,7 +20,6 @@ export default class SongCard extends React.Component {
       this.setState({
         fullInfo: fullInfo
       })
-      // console.log(this.state.fullInfo)
     }
     this.setState(prevState => ({
       showFullInfo: !prevState.showFullInfo

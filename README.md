@@ -10,6 +10,11 @@ The purpose of this app is to build a music playlist for running and exercise. U
 
 Created with [React](https://reactjs.org/).
 
+### Set Up
+* Fork and clone this repo
+* cd into the app and `npm i`
+* `npm start` to run a react server and launch the project
+
 ## Wireframes
 
 **Desktop View:**
@@ -24,27 +29,17 @@ Created with [React](https://reactjs.org/).
 ### MVP/PostMVP
 
 **MVP**
-
 * App can successfully call API for song info based on a title input
-
 * Results from search can be rendered on page as SongCards
-
 * User may choose SongCards to add to a playlist
-
 * User may remove SongsCards and clear playlist
-
 * Song Cards can be sorted by tempo
 
 **PostMVP**
-
 * Visual indicators for Tempo in relation to running speed
-
 * Playlists can be titled, saved and stored to local storage 
-
 * Song Cards can be sorted manually
-
 * SongCards in playlists can be expanded for more info
-
 * Proved general info about running and healthy pacing
 
 ## React Component Hierarchy
@@ -89,7 +84,6 @@ Created with [React](https://reactjs.org/).
 
 ## Functional Components
  
-
 | Component | Description | 
 | --- | --- |  
 | PlaylistBuilder | User may search for songs and compile playlists with the results | 
@@ -99,3 +93,41 @@ Created with [React](https://reactjs.org/).
 | PlaylistCard | Displays curated list of songs and includes editing options | 
 | SongCard | Displays song image, title, artist, tempo and length | 
 | SavedPlaylists | Displays previously saved playlists, saved to local storage | 
+
+## Code Snippet
+
+I wrote this code to interchangeably swap a \<p> tag and an \<input> field so that a user can retitle their playlist. It looks a lot uglier in the actual code due to poor choices and expirimention with state, but I'm pretty proud of how good the result looks.
+
+```
+handleRetitleClick = () => {
+  this.setState({
+    editTitle: true
+  });
+}
+
+handleRetitleChange = (ev) => {
+  let titleChange = ev.target.value;
+  this.setState({
+    title: titleChange,
+  });
+ }
+
+handleRetitleSubmit = () => {
+  if (!this.state.newPlaylist.title || this.state.newPlaylist.title.split(' ')[0] === '') {
+    this.setState({
+      title: 'New Playlist',
+      editTitle: false
+    });
+  } else {
+    this.setState({
+      editTitle: false
+    });
+  }
+}
+```
+
+## Issues and Resolutions
+
+Currently the background image won't stay fixed on a mobile platform.
+
+Proposed solution: wrap the entire body in a div and set it to scroll in a media query.

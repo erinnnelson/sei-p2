@@ -7,25 +7,29 @@ import PlaylistBuilder from './components/PlaylistBuilder';
 import SavedPlaylists from './components/SavedPlaylists';
 import Footer from './components/Footer';
 
-
 class App extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      outsideClick: false,
       searchCheck: '',
       searchResults: [],
       search: '',
       isSearchLoading: false,
+
+      // This object was successful in saving time for passing props, but a massive pain for state setting methods.
       newPlaylist: {
         songs: [],
         title: 'New Playlist',
-        editTitle: false
+        editTitle: false,
+
+        // Used to fix a form that reloaded on mobile but not on desktop
+        outsideClick: false,
       }
 
     }
   }
 
+  // Methods to search API database by song name.
   handleSearchChange = (ev) => {
     this.setState({
       search: ev.target.value
@@ -70,6 +74,8 @@ class App extends React.Component {
       }
   }
 
+
+  // Adding and deleting songs to playlist
   handleAddSong = (newSong) => {
     let bpmSort = [...this.state.newPlaylist.songs, newSong].sort((a, b) => {
       let temp1 = { ...a };
@@ -94,11 +100,21 @@ class App extends React.Component {
         songs: filteredSong,
         title: prevState.newPlaylist.title,
         editTitle: prevState.newPlaylist.editTitle
-
       }
     }));
   }
 
+  handleClearPlaylist = () => {
+    this.setState(prevState => ({
+      newPlaylist: {
+        songs: [],
+        title: 'New Playlist',
+        editTitle: prevState.newPlaylist.editTitle
+      }
+    }));
+  }
+
+  // Retitling the playlist
   handleRetitleClick = () => {
     this.setState(prevState => ({
       newPlaylist: {
@@ -152,16 +168,6 @@ class App extends React.Component {
         }
       }));
     }
-  }
-
-  handleClearPlaylist = () => {
-    this.setState(prevState => ({
-      newPlaylist: {
-        songs: [],
-        title: 'New Playlist',
-        editTitle: prevState.newPlaylist.editTitle
-      }
-    }));
   }
 
   render() {

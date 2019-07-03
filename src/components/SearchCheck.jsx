@@ -1,7 +1,6 @@
 import React from 'react'
 import error from '../assets/error.png'
 
-
 export default (props) => {
   return (
     <div className="search-check">

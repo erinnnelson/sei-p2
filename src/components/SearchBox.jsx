@@ -2,7 +2,6 @@ import React from 'react'
 import SearchInput from './SearchInput'
 import SearchResults from './SearchResults'
 
-
 export default (props) => {
   return (
     <div id="search-box" className="building-blocks">
@@ -16,7 +15,6 @@ export default (props) => {
         handleAddSong={props.handleAddSong}
         searchCheck={props.searchCheck}
       />
-      
     </div>
   );
 }

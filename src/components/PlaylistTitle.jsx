@@ -1,10 +1,8 @@
 import React from 'react'
 import onClickOutside from "react-onclickoutside"
 
-
 function PlaylistTitle(props) {
   return (
-
     <div id="playlist-title-changer">
       {props.newPlaylist.editTitle ?
         <form autocomplete="off" onSubmit={props.handleRetitleSubmit} onClickOutside={props.handleClickOutside}>
