@@ -5,9 +5,9 @@ function PlaylistTitle(props) {
   return (
     <div id="playlist-title-changer">
       {props.newPlaylist.editTitle ?
-        <form autocomplete="off" onSubmit={props.handleRetitleSubmit} onClickOutside={props.handleClickOutside}>
+        <form autoComplete="off" onSubmit={props.handleRetitleSubmit} onClickOutside={props.handleClickOutside}>
           <input
-            autocomplete="off"
+            autoComplete="off"
             autoFocus
             id="change-playlist-title"
             type="text"
